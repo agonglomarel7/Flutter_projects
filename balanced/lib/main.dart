@@ -38,12 +38,12 @@ class HomePage extends StatelessWidget {
               end: Alignment.bottomCenter,
             ),
           ),
-          child: SafeArea(
+          child: const SafeArea(
             child: SingleChildScrollView(
-              padding: const EdgeInsets.all(15),
+              padding: EdgeInsets.all(15),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
+                children: [
                   SizedBox(height: 15),
                   // Widgets à venir ici
                   SearchInput(),
@@ -54,24 +54,22 @@ class HomePage extends StatelessWidget {
                   SizedBox(height: 15,),
                   TagSelector(),
                   SizedBox(height: 15),
-                  const CustomInputField(
+                  CustomInputField(
                     hint: "Enter your email",
                     suffixIcon: Icons.email_outlined,
                   ),
                   SizedBox(height: 15),
-                  const CustomInputField(
+                  CustomInputField(
                     hint: "Enter your password",
                     suffixIcon: Icons.lock_outline,
                     obscure: true,
                   ),
                   SizedBox(height: 15),
-
-
+                  PrimaryButton(
+                    label: "Sign Up",
+                  ),
                 ],
-                PrimaryButton(
-                  label: "Sign Up",
-                  //onPressed: _signUpPressed, // fonction que tu définis
-                ),
+
               ),
             ),
           ),
