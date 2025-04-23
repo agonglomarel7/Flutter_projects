@@ -2,6 +2,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'CategoryScreen.dart';
+
 class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
