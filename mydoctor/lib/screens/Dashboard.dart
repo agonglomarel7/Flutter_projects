@@ -1,12 +1,17 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:mydoctor/controllers/category_controller.dart';
+
+import '../widgets/Category_widget.dart';
 
 class Dashboard extends StatelessWidget {
   const Dashboard({super.key});
 
   @override
   Widget build(BuildContext context) {
+
+    final categories = CategoryController.getCategories();
     return Scaffold(
         backgroundColor: const Color(0xFFF8F9FD),
       body: SafeArea(child: Padding(
@@ -46,9 +51,23 @@ class Dashboard extends StatelessWidget {
                     ),
                   ],
                 ),
-
               ],
             ),
+            const SizedBox(height: 16),
+            const Text(
+              "Categories",
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 16),
+            SizedBox(
+              height: 110,
+              child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: categories.length,
+                  itemBuilder: (context,index){
+                    return CategoryItem(category: categories[index]);
+                  }),
+            )
           ],
         ),
 
